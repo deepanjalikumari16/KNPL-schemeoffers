@@ -5,10 +5,12 @@ sap.ui.define([
     "com/knpl/pragati/SchemeOffers/controller/BaseController",
     "com/knpl/pragati/SchemeOffers/model/customInt",
     "com/knpl/pragati/SchemeOffers/model/cmbxDtype2",
-      "com/knpl/pragati/SchemeOffers/model/ArrayDType1",
-      "com/knpl/pragati/SchemeOffers/model/formatter",
+    "com/knpl/pragati/SchemeOffers/model/ArrayDType1",
+    "com/knpl/pragati/SchemeOffers/model/formatter",
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/core/Fragment"
 
-], function (Controller, coreLibrary, ValueState, BaseController, customInt, cmbxDtype2,ArrayDType1,formatter) {
+], function (Controller, coreLibrary, ValueState, BaseController, customInt, cmbxDtype2, ArrayDType1, formatter, JSONModel, Fragment) {
     "use strict";
 
     // shortcut for sap.ui.core.ValueState
@@ -17,8 +19,8 @@ sap.ui.define([
     return BaseController.extend("com.knpl.pragati.SchemeOffers.controller.wizard", {
         customInt: customInt,
         cmbxDtype2: cmbxDtype2,
-        ArrayDType1:ArrayDType1,
-        formatter:formatter,
+        ArrayDType1: ArrayDType1,
+        formatter: formatter,
         _syncSelect: function (sStepId) {
             var oModel = this.getView().getModel();
             oModel.setProperty('/linearWizardSelectedStep', sStepId);
@@ -30,7 +32,7 @@ sap.ui.define([
             var aStep = this.getView().byId("ProductTypeStep")
             var aWizard = this.getView().byId("CreateProductWizard")
             oProdInfoStep.setValidated();
-           
+
             //this.getView().byId("CreateProductWizard").goToStep()
             //aWizard.previouStep()
         },
@@ -41,13 +43,16 @@ sap.ui.define([
             var oView = this.getView()
 
             this._syncSelect(sCurrentStepId);
-           // console.log("Step Activated", sCurrentStepId)
+            // console.log("Step Activated", sCurrentStepId)
             if (sCurrentStepId === 'PricingStep') {
                 //this.validateProdInfoStep(sCurrentStepId);
 
             }
         },
         onInit: function () {
+
+
+
 
             sap.ui.getCore().attachValidationError(function (oEvent) {
                 if (oEvent.getParameter("element").getRequired()) {
@@ -80,5 +85,8 @@ sap.ui.define([
         onExit: function () {
             //console.log("on Exit");
         }
+
+
+
     });
 });

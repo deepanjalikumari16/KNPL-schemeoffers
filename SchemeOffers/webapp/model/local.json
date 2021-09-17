@@ -1,0 +1,64 @@
+{
+    "OfferSet": [
+        {
+            "MembershipID": 1,
+            "Name": "Buy",
+            "MobileNumber": "12/15/2020",
+            "Zone": "Bank Transfer",
+            "Division": "12/15/2020",
+            "Depot": "12/15/2020",
+            "PainterType": "Mj Kulkarni",
+            "PainterArcheType": "Approved"
+        },
+        {
+            "MembershipID": 2,
+            "Name": "Buy 1000ltr of scheme products",
+            "MobileNumber": "12/15/2020",
+            "Zone": "Bank Transfer",
+            "Division": "12/15/2020",
+            "Depot": "12/15/2020",
+            "PainterType": "Mj Kulkarni",
+            "PainterArcheType": "Approved"
+        },
+        {
+            "MembershipID": 3,
+            "Name": "Buy 1000ltr of scheme products",
+            "MobileNumber": "12/15/2020",
+            "Zone": "Bank Transfer",
+            "Division": "12/15/2020",
+            "Depot": "12/15/2020",
+            "PainterType": "Mj Kulkarni",
+            "PainterArcheType": "Approved"
+        },
+        {
+            "MembershipID": 4,
+            "Name": "Buy 1000ltr of scheme products",
+            "MobileNumber": "12/15/2020",
+            "Zone": "Bank Transfer",
+            "Division": "12/15/2020",
+            "Depot": "12/15/2020",
+            "PainterType": "Mj Kulkarni",
+            "PainterArcheType": "Approved"
+        },
+        {
+            "MembershipID": 5,
+            "Name": "Buy 1000ltr of scheme products",
+            "MobileNumber": "12/15/2020",
+            "Zone": "Bank Transfer",
+            "Division": "12/15/2020",
+            "Depot": "12/15/2020",
+            "PainterType": "Mj Kulkarni",
+            "PainterArcheType": "Approved"
+        },
+        {
+            "MembershipID": 6,
+            "Name": "Buy 1000ltr of scheme products",
+            "MobileNumber": "12/15/2020",
+            "Zone": "Bank Transfer",
+            "Division": "12/15/2020",
+            "Depot": "12/15/2020",
+            "PainterType": "Mj Kulkarni",
+            "PainterArcheType": "Approved"
+        }
+    ]
+}

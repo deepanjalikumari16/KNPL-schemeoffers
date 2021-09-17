@@ -3,8 +3,9 @@ sap.ui.define([
     "sap/ui/core/UIComponent",
     "sap/ui/Device",
     "com/knpl/pragati/SchemeOffers/model/models",
-    "com/knpl/pragati/SchemeOffers/controller/ErrorHandler"
-], function (UIComponent, Device, models, ErrorHandler) {
+    "com/knpl/pragati/SchemeOffers/controller/ErrorHandler",
+    "sap/ui/model/json/JSONModel"
+], function (UIComponent, Device, models, ErrorHandler,JSONModel) {
     "use strict";
 
     return UIComponent.extend("com.knpl.pragati.SchemeOffers.Component", {

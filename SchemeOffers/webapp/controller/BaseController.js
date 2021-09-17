@@ -138,11 +138,7 @@ sap.ui.define(
                 oRouter.navTo("RouteLandingPage", {}, true);
             },
 
-            // created for painter specipic //
-            onpressfrag: function () {
 
-
-            },
 
 
             onPostSchemeData: function (oPayload, fileFlag) { },
@@ -2567,7 +2563,7 @@ sap.ui.define(
                 var sId = oEvent.getSource().getSelectedKey();
                 var oView = this.getView();
 
-                var oDivision = sap.ui.getCore().byId("idPVhDivision");
+
                 var oDivItems = oDivision.getBinding("items");
                 var oDivSelItm = oDivision.getSelectedItem(); //.getBindingContext().getObject()
                 oDivision.clearSelection();
@@ -4756,7 +4752,48 @@ sap.ui.define(
             onUploadMisMatch: function () {
                 MessageToast.show("Kindly upload a file of type .png, .jpg, .jpeg");
             },
+            onpressfrag: function () {
+                var oView = this.getView();
 
+                var dataModel = oView.getModel("FragData");
+                this.getView().setModel(dataModel, "DataModel");
+                var fragmentData = oView.getModel("DataModel").getData();
+
+                oView.getModel("oModelControl").setProperty("/ofragmentModel", fragmentData.OfferSet);
+
+
+                return new Promise(function (resolve, reject) {
+                    if (!this._RewardsDialog21) {
+                        Fragment.load({
+                            id: oView.getId(),
+                            name: "com.knpl.pragati.SchemeOffers.view.fragment.PainterDialogue",
+                            controller: this,
+                        }).then(
+                            function (oDialog) {
+                                this._RewardsDialog21 = oDialog;
+                                oView.addDependent(this._RewardsDialog21);
+
+                                this._RewardsDialog21.open();
+                                resolve();
+                            }.bind(this)
+                        );
+                    } else {
+
+                        this._RewardsDialog21.open();
+                        resolve();
+                    }
+                }.bind(this));
+            },
+
+            onSavePaitner: function (oEvent) {
+                var oView = this.getView();
+                var fragmentData = oView.getModel("oModelControl").getProperty("/ofragmentModel");
+                var iGetSelIndices = oView.byId("idPainterDialog").getSelectedIndices();
+                var selectedData = iGetSelIndices.map(i => fragmentData[i]);
+
+                  console.log(selectedData);
+
+            },
             /**
              * Adds a history entry in the FLP page history
              * @public
