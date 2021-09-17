@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run knpl-influencer-web-SchemeOffers",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/knpl-influencer-web/knpl-influencer-web-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/comknplpragatiSchemeOffers/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/knpl-influencer-web/SchemeOffers",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/knpl-influencer-web/SchemeOffers\"}"
+      },
+      "envFile": "${workspaceFolder}/knpl-influencer-web/SchemeOffers/.env1",
+      "preLaunchTask": "Build knpl-influencer-web"
+    }
+  ]
+}
